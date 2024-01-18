@@ -13,8 +13,11 @@ jobs:
   encryption:
     runs-on: ubuntu-latest
     steps:
-      # - name: Get Code
-      #   uses: actions/checkout@v3
+      - name: Get global node ID
+        id: get-repo-id
+        uses: nvdaes/get-repository-id@v1
+        with:
+          repository: setimozac/test-java-encrypt
 
       - name: Get Password
         run: |
