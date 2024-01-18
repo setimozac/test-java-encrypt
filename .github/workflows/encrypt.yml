@@ -16,8 +16,10 @@ jobs:
 
       - name: Buid SpringBoot
         run: |
-          sudo apt update
-          sudo apt install gradle
+          curl -s "https://get.sdkman.io" | bash
+          source "$HOME/.sdkman/bin/sdkman-init.sh"
+          sdk install gradle
+          echo "---------------------------"
           ./gradlew build
       
       - name: Install Springboot CLI
