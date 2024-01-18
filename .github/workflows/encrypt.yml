@@ -1,7 +1,7 @@
-name: encript-passwords
-on: issue
+name: encrypt-passwords
+on: issues
 jobs:
-  encription:
+  encryption:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
