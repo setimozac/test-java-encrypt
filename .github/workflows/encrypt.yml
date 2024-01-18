@@ -28,13 +28,6 @@ jobs:
           sdk install springboot 2.3.12.RELEASE
           spring --version
 
-      # - name: Install Springboot CLI
-      #   run: |
-      #     curl -s "https://get.sdkman.io" | bash
-      #     source "$HOME/.sdkman/bin/sdkman-init.sh"
-      #     sdk install springboot
-
-
-      # - name: encrypt
-      #   run: |
-      #     spring encrypt "Hello" --key 'ABC'
+      - name: encrypt
+        run: |
+          spring encrypt "Hello" --key 'ABC'
