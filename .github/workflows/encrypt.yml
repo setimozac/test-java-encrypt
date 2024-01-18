@@ -27,6 +27,7 @@ jobs:
           source "/home/runner/.sdkman/bin/sdkman-init.sh"
           sdk install springboot 2.0.1 
           spring --version
+          spring install org.springframework.cloud:spring-cloud-cli:1.3.2.RELEASE
           spring encrypt "Hello" --key 'ABC'
 
       # - name: encrypt
