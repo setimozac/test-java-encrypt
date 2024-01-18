@@ -20,6 +20,11 @@ jobs:
           source "$HOME/.sdkman/bin/sdkman-init.sh"
           sdk install springboot
 
+      - name: SDKMAN in the current shell
+        run: |
+          echo "source $HOME/.sdkman/bin/sdkman-init.sh" >> $GITHUB_ENV
+          spring --version
+
       - name: encrypt
         run: |
           spring encrypt "Hello" --key 'ABC'
