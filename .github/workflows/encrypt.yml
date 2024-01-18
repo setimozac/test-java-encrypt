@@ -27,7 +27,9 @@ jobs:
           source "/home/runner/.sdkman/bin/sdkman-init.sh"
           sdk install springboot 2.3.12.RELEASE
           spring --version
-
-      - name: encrypt
-        run: |
           spring encrypt "Hello" --key 'ABC'
+
+      # - name: encrypt
+      #   run: |
+      #     source "/home/runner/.sdkman/bin/sdkman-init.sh"
+      #     spring encrypt "Hello" --key 'ABC'
