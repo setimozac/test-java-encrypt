@@ -53,4 +53,6 @@ jobs:
         run: |
           source "/home/runner/.sdkman/bin/sdkman-init.sh"
           echo "==========encypting2========="
+          echo "PASS: ${{ env.PASS }}"
+          echo "KEY: ${{ env.KEY }}"
           spring encrypt "${{ env.PASS }}" --key "${{ env.KEY }}"
