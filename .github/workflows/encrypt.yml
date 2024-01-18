@@ -5,6 +5,9 @@ on:
       password:
         required: true
         type: string
+      key:
+        required: true
+        type: string
       
 jobs:
   encryption:
@@ -52,7 +55,9 @@ jobs:
       - name: encrypt
         run: |
           source "/home/runner/.sdkman/bin/sdkman-init.sh"
-          echo "==========encypting2========="
+          echo "==========encrypting2========="
           echo "PASS: ${{ env.PASS }}"
           echo "KEY: ${{ env.KEY }}"
-          spring encrypt "${{ env.PASS }}" --key "${{ env.KEY }}"
+          spring encrypt "${{ env.PASS }}" --key "ABC"
+          echo "==========decrypting2========="
+          spring decrypt "${{ env.PASS }}" --key "ABC"
