@@ -20,7 +20,7 @@ jobs:
           source "$HOME/.sdkman/bin/sdkman-init.sh"
           sdk install gradle
           echo "---------------------------"
-          ./gradle build
+          gradle build
       
       - name: Install Springboot CLI
         run: |
