@@ -16,13 +16,9 @@ jobs:
 
       - name: Install Springboot CLI
         run: |
-          wget https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.5.5/spring-boot-cli-2.5.5-bin.tar.gz
-          tar -zxvf spring-boot-cli-2.5.5-bin.tar.gz
-          export PATH=$PATH:$pwd/spring-2.5.5/bin
-
-      - name: Verify SpringBoot CLI Installation
-        run: |
-          spring --version
+          curl -s "https://get.sdkman.io" | bash
+          source "$HOME/.sdkman/bin/sdkman-init.sh"
+          sdk install springboot
 
       - name: encrypt
         run: |
