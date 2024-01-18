@@ -16,6 +16,7 @@ jobs:
 
       - name: Buid SpringBoot
         run: |
+          apt install gradle
           ./gradlew build
       
       - name: Install Springboot CLI
