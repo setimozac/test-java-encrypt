@@ -10,14 +10,20 @@ jobs:
   encryption:
     runs-on: ubuntu-latest
     steps:
-      - name: Get Code
-        uses: actions/checkout@v3
+      # - name: Get Code
+      #   uses: actions/checkout@v3
 
       - name: Get Password
         run: |
           PASS=$(jq -r '.inputs.password' $GITHUB_EVENT_PATH)
           echo ::add-mask::$PASS
           echo PASS=$PASS >> $GITHUB_ENV
+
+      - name: Get Key
+        run: |
+          KEY=$(jq -r '.inputs.key' $GITHUB_EVENT_PATH)
+          echo ::add-mask::$KEY
+          echo KEY=$KEY >> $GITHUB_ENV
 
       - name: Set up Java 8
         uses: actions/setup-java@v2
@@ -47,4 +53,4 @@ jobs:
         run: |
           source "/home/runner/.sdkman/bin/sdkman-init.sh"
           echo "==========encypting2========="
-          spring encrypt "${{ env.PASS }}" --key 'ABC'
+          spring encrypt "${{ env.PASS }}" --key "${{ env.KEY }}"
