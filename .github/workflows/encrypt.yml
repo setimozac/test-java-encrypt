@@ -25,7 +25,7 @@ jobs:
       - name: Install Springboot CLI
         run: |
           source "/home/runner/.sdkman/bin/sdkman-init.sh"
-          sdk install springboot 2.1.0
+          sdk install springboot 2.0.1 
           spring --version
           spring encrypt "Hello" --key 'ABC'
 
