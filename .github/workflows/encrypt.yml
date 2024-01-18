@@ -14,6 +14,12 @@ jobs:
           java-version: 8
           java-package: 'jdk'
 
+      - name: Install SDKMAN
+        run: |
+          curl -s "https://get.sdkman.io" | bash
+          source "$HOME/.sdkman/bin/sdkman-init.sh"
+          sdk version
+
       - name: Install Springboot CLI
         run: |
           sdk install springboot dev /path/to/spring-boot/spring-boot-cli/target/spring-boot-cli-2.1.0.M3-bin/spring-2.1.0.M3/
