@@ -58,6 +58,6 @@ jobs:
           echo "==========encrypting2========="
           echo "PASS: ${{ env.PASS }}"
           echo "KEY: ${{ env.KEY }}"
-          spring encrypt "${{ env.PASS }}" --key "ABC"
+          ENC_PASS = $(spring encrypt "${{ env.PASS }}" --key "ABC")
           echo "==========decrypting2========="
-          spring decrypt "${{ env.PASS }}" --key "ABC"
+          spring decrypt "$ENC_PASS" --key "ABC"
