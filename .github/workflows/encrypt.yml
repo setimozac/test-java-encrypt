@@ -43,7 +43,8 @@ jobs:
           echo "==========encypting========="
           spring encrypt "${{ env.PASS }}" --key 'ABC'
 
-      # - name: encrypt
-      #   run: |
-      #     source "/home/runner/.sdkman/bin/sdkman-init.sh"
-      #     spring encrypt "Hello" --key 'ABC'
+      - name: encrypt
+        run: |
+          # source "/home/runner/.sdkman/bin/sdkman-init.sh"
+          echo "==========encypting2========="
+          spring encrypt "Hello" --key 'ABC'
