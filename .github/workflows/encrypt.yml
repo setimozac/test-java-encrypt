@@ -14,24 +14,16 @@ jobs:
           java-version: 8
           java-package: 'jdk'
 
-      - name: Buid SpringBoot
-        run: |
-          curl -s "https://get.sdkman.io" | bash
-          source "$HOME/.sdkman/bin/sdkman-init.sh"
-          sdk install gradle
-          echo "---------------------------"
-          gradle build
-      
       - name: Install Springboot CLI
         run: |
           wget https://repo.spring.io/release/org/springframework/boot/spring-boot-cli/2.5.5/spring-boot-cli-2.5.5-bin.tar.gz
           tar -zxvf spring-boot-cli-2.5.5-bin.tar.gz
           export PATH=$PATH:$pwd/spring-2.5.5/bin
 
-      - name: Verify SpringBoot CLI Instalation
+      - name: Verify SpringBoot CLI Installation
         run: |
           spring --version
 
-      - name: encript
+      - name: encrypt
         run: |
-          spring encrypt "Helo" --key 'abc'
+          spring encrypt "Hello" --key 'ABC'
