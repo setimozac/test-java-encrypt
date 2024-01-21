@@ -65,6 +65,10 @@ jobs:
           echo ENC_PASS=$ENC_PASS >> $GITHUB_ENV
           echo "==========decrypting2========="
           P=$(spring decrypt "$ENC_PASS" --key "ABC")
+          if [[ $p == ${{ env.PASS }} ]]
+          then
+            echo "YEEEEES"
+          fi
           echo $P >> pass.txt
 
       - name: Upload File
@@ -80,7 +84,7 @@ jobs:
       - name: Get File
         uses: actions/download-artifact@v3
         with:
-          name: test-file
+          name: text-file
 
       - name: print
         run: |
