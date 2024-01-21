@@ -65,4 +65,25 @@ jobs:
           echo ENC_PASS=$ENC_PASS >> $GITHUB_ENV
           echo "==========decrypting2========="
           P=$(spring decrypt "$ENC_PASS" --key "ABC")
-          echo $P
+          echo $P >> pass.txt
+
+      - name: Upload File
+        uses: actions/upload-artifact@v3
+        with:
+          name: text-file
+          path: pass.txt
+
+  get_file:
+    needs: encryption
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get File
+        uses: actions/download-artifact@v3
+        with:
+          name: test-file
+
+      - name: print
+        run: |
+          ls
+          cat pass.txt
+      
