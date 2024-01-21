@@ -65,11 +65,11 @@ jobs:
           echo ENC_PASS=$ENC_PASS >> $GITHUB_ENV
           echo "==========decrypting2========="
           P=$(spring decrypt "$ENC_PASS" --key "ABC")
-          if [[ $P == ${{ env.PASS }} ]]
+          if [[ "${P}" == ${{ env.PASS }} ]]
           then
             echo "YEEEEES"
           fi
-          echo $P >> pass.txt
+          echo "${P}" >> pass.txt
 
       - name: Upload File
         uses: actions/upload-artifact@v3
