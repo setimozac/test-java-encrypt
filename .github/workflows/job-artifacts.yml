@@ -10,7 +10,8 @@ jobs:
 
       - name: Running tests
         run: |
-          ./my-script test
+          ls -la
+          my-script test
     
   build:
     needs: test
