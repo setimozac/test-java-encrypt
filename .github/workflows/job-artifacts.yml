@@ -11,7 +11,7 @@ jobs:
       - name: Running tests
         run: |
           ls -la
-          my-script.sh test
+          bash my-script.sh test
     
   build:
     needs: test
@@ -21,7 +21,7 @@ jobs:
       - name: Build
         run: |
           echo "Running The Build ....."
-          my-script.sh
+          bash my-script.sh
 
       - name: Upload Artifacts for s1
         uses: actions/upload-artifact@v3
