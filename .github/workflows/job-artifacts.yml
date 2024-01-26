@@ -11,7 +11,7 @@ jobs:
       - name: Running tests
         run: |
           ls -la
-          bash my-script.sh test
+          bash my-script.sh test pass
     
   build:
     needs: test
