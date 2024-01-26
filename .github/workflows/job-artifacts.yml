@@ -1,0 +1,35 @@
+name: artifacts
+on: push
+jobs:
+  test:
+    name: Runs tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v3
+
+      - name: Running tests
+        run: |
+          ./my-script test
+    
+  build:
+    needs: test
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: |
+          echo "Running The Build ....."
+          ./my-script
+
+      - name: Upload Artifacts for s1
+        uses: actions/upload-artifact@v3
+        with:
+          name: service1
+          path: ./service1/
+
+      - name: Upload Artifacts for s2
+        uses: actions/upload-artifacts@v3
+        with:
+          name: service2
+          path: ./service2/

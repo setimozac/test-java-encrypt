@@ -1,8 +1,0 @@
-plugins {
-  id 'org.springfrsmework.boot' version '2.5.5'
-  id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-}
-
-springBoot {
-  version = '2.5.5'
-}
