@@ -16,6 +16,8 @@ jobs:
   build:
     needs: test
     name: Build
+    outputs:
+      build-time: ${{ steps.build_time.outputs.build-time }}
     runs-on: ubuntu-latest
     steps:
       - name: Get the code
@@ -25,6 +27,10 @@ jobs:
         run: |
           echo "Running The Build ....."
           bash my-script.sh
+
+      - name: build time
+        id: build_time
+        run: echo "build-time=$(date)" >> $GITHUB_OUTPUT
 
       - name: Upload Artifacts for s1
         uses: actions/upload-artifact@v3
@@ -62,3 +68,4 @@ jobs:
           cat ./services/service1/text.txt
           echo "service2:"
           cat ./services/service2/text.txt
+          echo build time: $(echo ${{ needs.build.outputs.build-time }})
