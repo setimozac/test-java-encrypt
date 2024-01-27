@@ -54,3 +54,11 @@ jobs:
         with:
           name: service2
           path: services/service2/
+      
+      - name: check the files
+        run: |
+          ls -la
+          echo service1:
+          cat ./services/service1/text.txt
+          echo "service2:"
+          cat ./services/service2/text.txt
