@@ -6,7 +6,6 @@ then
   ls -la config/
   cat config/service1/service1.json
   cat config/service2/service2.json
-  exit 0
 fi
 
 mkdir config 
