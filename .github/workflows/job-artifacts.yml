@@ -42,7 +42,7 @@ jobs:
           path: |
             config/service1
             config/service2
-          key: services-${{ hashFiles('**/service[1-9]?.json') }}
+          key: services-${{ hashFiles('**/service1.json') }}
 
       - name: generate config files
         run: bash config.sh
