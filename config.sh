@@ -13,6 +13,6 @@ touch config/service2/service2.json
 
 sleep 5
 
-echo "{'service': 1}" > config/service1/service1.json
+echo "{'service': 'one'}" > config/service1/service1.json
 echo "{'service': 2}" > config/service2/service2.json
 
