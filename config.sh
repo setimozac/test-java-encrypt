@@ -2,6 +2,7 @@
 
 if [[ -d "config/" ]]
 then
+  echo "From cache"
   exit 0
 fi
 
