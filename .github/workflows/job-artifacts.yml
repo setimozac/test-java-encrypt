@@ -4,6 +4,7 @@ on:
   release:
 jobs:
   test:
+    environment: STG
     env:
       TEST_RUN: 'test'
       TEST_RESULT: 'pass'
