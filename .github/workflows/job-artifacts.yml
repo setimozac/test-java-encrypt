@@ -4,7 +4,7 @@ jobs:
   test:
     env:
       TEST_RUN: 'test'
-      TEST_RESULT: 'pass'
+      TEST_RESULT: 'failed'
     name: Runs tests
     runs-on: ubuntu-latest
     steps:
