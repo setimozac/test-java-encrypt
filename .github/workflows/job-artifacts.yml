@@ -26,7 +26,7 @@ jobs:
       - name: Running tests
         run: |
           ls -la
-          bash my-script.sh ${{ github.env.TEST_RUN }} ${{ github.env.TEST_RESULT }}
+          bash my-script.sh "${{ env.TEST_RUN }}" "${{ env.TEST_RESULT }}"
     
   build:
     needs: test
