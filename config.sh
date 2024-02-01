@@ -13,7 +13,7 @@ else
   touch config/service1/service1.json
   touch config/service2/service2.json
 fi
-
+echo "environment: ${ENVIRON}"
 echo "{'service': 'one'}" > config/service1/service1.json
 echo "{'service': 2}" > config/service2/service2.json
 
