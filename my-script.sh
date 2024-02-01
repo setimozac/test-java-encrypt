@@ -1,4 +1,7 @@
 #!/bin/bash
+
+echo "test result: ${TEST_RESULT}"
+
 if [[ $1 = 'test' ]]
 then
   if [[ $2 = 'pass' ]]

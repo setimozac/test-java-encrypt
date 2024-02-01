@@ -2,6 +2,9 @@ name: artifacts
 on: push
 jobs:
   test:
+    env:
+      TEST_RUN: 'test'
+      TEST_RESULT: 'pass'
     name: Runs tests
     runs-on: ubuntu-latest
     steps:
@@ -23,7 +26,7 @@ jobs:
       - name: Running tests
         run: |
           ls -la
-          bash my-script.sh test pass
+          bash my-script.sh ${{ github.env.TEST_RUN }} ${{ github.env.TEST_RESULT }}
     
   build:
     needs: test
