@@ -4,6 +4,7 @@ echo "test result: ${TEST_RESULT}"
 
 if [[ $1 = 'test' ]]
 then
+  echo "test starts...."
   if [[ $2 = 'pass' ]]
   then
     echo "PASS"
