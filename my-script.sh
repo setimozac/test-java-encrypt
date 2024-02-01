@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "test result: ${TEST_RESULT}"
+echo "environment: ${ENVIRON}"
 
 if [[ $1 = 'test' ]]
 then
