@@ -1,5 +1,7 @@
 name: artifacts
-on: push
+on: 
+  push:
+  release:
 jobs:
   test:
     env:
