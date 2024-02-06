@@ -14,7 +14,7 @@ jobs:
         run: |
           echo "Creating a file"
           touch file1.txt
-          [[ "${{ env.TEST_RESULTS }}" = "PASS" ]] && exit 0
+          [[ "${{ env.TEST_RESULTS }}" = "PASS" ]]
 
       - name: write test results
         if: failure() && ${{ steps.test.outcome }} == 'failure'
