@@ -41,6 +41,7 @@ jobs:
           ls -la
 
   report:
+    needs: [test, build]
     if: failure()
     runs-on: ubuntu-latest
     steps:
