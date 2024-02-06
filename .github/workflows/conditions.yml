@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get Artifacts
-        uses: actions/download/artifact@v3
+        uses: actions/download-artifact@v3
         with:
           name: artifacts
       - name: Check the artifact
