@@ -10,14 +10,16 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Tests
+        id: test
         run: |
           echo "Creating a file"
           touch file1.txt
           [[ "${{ env.TEST_RESULTS }}" = "PASS" ]] && exit 0
 
       - name: write test results
+        if: failure() && ${{ steps.test.outcome }} == 'failure'
         run: |
-          echo "${{ env.TEST_RESULTS }} $(date)" >> file1.txt 
+          echo "${{ env.TEST_RESULTS }} $(date)" >> file2.txt 
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
