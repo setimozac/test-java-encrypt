@@ -11,7 +11,7 @@ jobs:
         run: |
           echo "Creating a file"
           touch file1.txt
-          [[ "${{ env.TEST_RESULT }}" = "failed" ]] && exit 0
+          [[ "" = "" ]] && exit 0
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
