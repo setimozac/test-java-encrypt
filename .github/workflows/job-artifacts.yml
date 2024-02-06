@@ -8,7 +8,7 @@ jobs:
     environment: test
     env:
       TEST_RUN: 'test'
-      TEST_RESULT: 'Failed'
+      TEST_RESULT: 'pass'
       ENVIRON: ${{ vars.ENVIRON }}
     name: Runs tests
     runs-on: ubuntu-latest
