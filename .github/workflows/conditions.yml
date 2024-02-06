@@ -17,7 +17,7 @@ jobs:
           [[ "${{ env.TEST_RESULTS }}" = "PASS" ]]
 
       - name: write test results
-        if: failure() && ${{ steps.test.outcome }} == 'failure'
+        if: failure() && (steps.test.outcome == 'failure')
         run: |
           echo "${{ env.TEST_RESULTS }} $(date)" >> file2.txt 
 
