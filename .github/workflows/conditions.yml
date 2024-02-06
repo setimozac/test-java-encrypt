@@ -1,7 +1,7 @@
 name: conditions
 on: push
 env:
-  TEST_RESULTS: "PASS"
+  TEST_RESULTS: "FAILED"
 jobs:
   test:
     runs-on: ubuntu-latest
