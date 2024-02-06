@@ -11,6 +11,7 @@ jobs:
         run: |
           echo "Creating a file"
           touch file1.txt
+          [[ ${{ env.TEST_RESULT }} == 'failed' ]] && exit 1
       - name: Upload Atrifacts
         uses: actions/upload-artifact@v3
         with:
