@@ -39,3 +39,11 @@ jobs:
           [[ -f file1.txt ]] && echo "found the artifact"
           cat file1.txt
           ls -la
+
+  report:
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - name: output
+        run: |
+          echo "REPORTS....."
