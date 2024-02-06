@@ -14,6 +14,11 @@ jobs:
           echo "Creating a file"
           touch file1.txt
           [[ "${{ env.TEST_RESULTS }}" = "PASS" ]] && exit 0
+
+      - name: write test results
+        run: |
+          echo "${{ env.TEST_RESULTS }} $(date)" >> file1.txt 
+
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
@@ -30,4 +35,5 @@ jobs:
       - name: Check the artifact
         run: |
           [[ -f file1.txt ]] && echo "found the artifact"
+          cat file1.txt
           ls -la
