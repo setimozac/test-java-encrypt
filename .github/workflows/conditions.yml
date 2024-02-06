@@ -1,0 +1,29 @@
+name: conditions
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GET CODE
+        uses: actions/checkout@v3
+
+      - name: Run Tests
+        run: |
+          echo "Creating a file"
+          touch file1.txt
+      - name: Upload Atrifacts
+        uses: actions/upload-artifact@v3
+        with:
+          path: file1.txt
+          name: artifacts
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Artifacts
+        uses: actions/download/artifact@v3
+        with:
+          name: artifacts
+      - name: Check the artifact
+        run: |
+          [[ -f file1.txt ]] && echo "found the artifact"
