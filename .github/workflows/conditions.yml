@@ -1,5 +1,7 @@
 name: conditions
 on: push
+env:
+  TEST_RESULTS: "PASS"
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -11,7 +13,7 @@ jobs:
         run: |
           echo "Creating a file"
           touch file1.txt
-          [[ "" = "" ]] && exit 0
+          [[ "${{ env.TEST_RESULTS }}" = "PASS" ]] && exit 0
       - name: Upload Artifacts
         uses: actions/upload-artifact@v3
         with:
