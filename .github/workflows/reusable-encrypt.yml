@@ -48,5 +48,5 @@ jobs:
           encrypted_pass=$(spring encrypt "${{ env.PASS }}" --key 'ABC')
           echo encrypted-pass=$encrypted_pass >> $GITHUB_OUTPUT
           P=${{ env.PASS }}
-          echo ${p:0:2}
+          echo ${P:0:2}
           echo $encrypted_pass
