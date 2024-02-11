@@ -33,7 +33,7 @@ jobs:
   encryption:
     uses: setimozac/test-java-encrypt/.github/workflows/reusable-encrypt.yml@main
     with:
-      password: 12345
+      password: '12345'
   build:
     needs: [test, encryption]
     name: Build

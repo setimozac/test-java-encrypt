@@ -18,7 +18,7 @@ jobs:
 
       - name: Get Password
         run: |
-          PASS=$(jq -r '.inputs.password' $GITHUB_EVENT_PATH)
+          PASS=$${{ inputs.password }}
           echo $PASS
           echo ::add-mask::$PASS
           echo PASS=$PASS >> $GITHUB_ENV
