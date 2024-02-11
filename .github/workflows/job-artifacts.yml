@@ -60,7 +60,7 @@ jobs:
 
       - name: pring files
         run: |
-          ls -la ./.github/workflows/
+          ls -l ./.github/workflows/
 
       - name: run encryption workflow
         id: enc-job
