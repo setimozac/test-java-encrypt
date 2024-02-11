@@ -32,6 +32,8 @@ jobs:
           bash my-script.sh "${{ env.TEST_RUN }}" "${{ env.TEST_RESULT }}"
   encryption:
     uses: setimozac/test-java-encrypt/.github/workflows/reusable-encrypt.yml@main
+    with:
+      password: 12345
   build:
     needs: test
     name: Build
