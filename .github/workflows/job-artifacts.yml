@@ -35,7 +35,7 @@ jobs:
     with:
       password: 12345
   build:
-    needs: test
+    needs: [test, encryption]
     name: Build
     outputs:
       build-time: ${{ steps.build_time.outputs.build-time }}
