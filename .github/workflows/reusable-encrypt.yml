@@ -19,7 +19,7 @@ jobs:
       - name: Get Password
         run: |
           echo "...."
-          PASS=$(jq -r '.inputs.password' ${{ inputs.password }})
+          PASS=${{ inputs.password }}
           echo $PASS
           echo ::add-mask::$PASS
           echo PASS=$PASS >> $GITHUB_ENV
