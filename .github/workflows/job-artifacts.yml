@@ -1,8 +1,6 @@
 name: artifacts
 on: 
-  push:
-  release:
-    types: [published]
+  push:  
 jobs:
   test:
     environment: test
@@ -34,7 +32,6 @@ jobs:
           bash my-script.sh "${{ env.TEST_RUN }}" "${{ env.TEST_RESULT }}"
     
   build:
-    if: always()
     needs: test
     name: Build
     outputs:
@@ -60,6 +57,14 @@ jobs:
         run: |
           echo "Running The Build ....."
           bash my-script.sh
+
+      - name: run encryption workflow
+        id: enc-job
+        uses: ./.github/workflows/reusable-encrpt.yml
+          
+      - name: add enc-pass
+        run: |
+          echo ${{ needs.enc-job.outputs.encrypted-pass }}
 
       - name: build time
         id: build_time
