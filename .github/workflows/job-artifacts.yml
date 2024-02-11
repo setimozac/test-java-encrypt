@@ -30,7 +30,8 @@ jobs:
         run: |
           ls -la
           bash my-script.sh "${{ env.TEST_RUN }}" "${{ env.TEST_RESULT }}"
-    
+  encryption:
+    uses: setimozac/test-java-encrypt/.github/workflows/reusable-encrypt.yml@main
   build:
     needs: test
     name: Build
@@ -62,13 +63,13 @@ jobs:
         run: |
           ls -l ./.github/workflows/
 
-      - name: run encryption workflow
-        id: enc-job
-        uses: setimozac/test-java-encrypt/.github/workflows/reusable-encrypt.yml@main
+      # - name: run encryption workflow
+      #   id: enc-job
+      #   uses: setimozac/test-java-encrypt/.github/workflows/reusable-encrypt.yml@main
           
       - name: add enc-pass
         run: |
-          echo ${{ needs.enc-job.outputs.encrypted-pass }}
+          echo ${{ needs.encryption.outputs.encrypted-pass }}
 
       - name: build time
         id: build_time
