@@ -60,7 +60,7 @@ jobs:
 
       - name: run encryption workflow
         id: enc-job
-        uses: ./.github/workflows/reusable-encrpt.yml
+        uses: ./.github/workflows/reusable-encrypt.yml
           
       - name: add enc-pass
         run: |
