@@ -18,9 +18,7 @@ jobs:
 
       - name: Get Password
         run: |
-          PASS=${{ inputs.password }}
-          echo $PASS
-          echo ::add-mask::$PASS
+          echo ::add-mask::${{ inputs.password }}
           echo PASS=$PASS >> $GITHUB_ENV
 
       - name: Install Java8
