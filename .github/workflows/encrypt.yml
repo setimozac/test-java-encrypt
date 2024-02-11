@@ -72,7 +72,7 @@ jobs:
           then
             echo "YEEEEES"
           fi
-          echo "$P" >> pass.txt
+          echo "Pass for version- ${{ matrix.springboot-cli }}: $P" >> pass.txt
 
       - name: Upload File
         uses: actions/upload-artifact@v3
