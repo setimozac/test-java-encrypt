@@ -58,6 +58,10 @@ jobs:
           echo "Running The Build ....."
           bash my-script.sh
 
+      - name: pring files
+        run: |
+          ls -la ./.github/workflows/
+
       - name: run encryption workflow
         id: enc-job
         uses: ./.github/workflows/reusable-encrypt.yml
