@@ -18,7 +18,10 @@ jobs:
 
       - name: Get Password
         run: |
-          echo ::add-mask::${{ inputs.password }}
+          echo "...."
+          PASS=$(jq -r '.inputs.password' ${{ inputs.password }})
+          echo $PASS
+          echo ::add-mask::$PASS
           echo PASS=$PASS >> $GITHUB_ENV
 
       - name: Install Java8
