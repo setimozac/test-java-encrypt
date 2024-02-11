@@ -19,6 +19,7 @@ jobs:
       - name: Get Password
         run: |
           PASS=$(jq -r '.inputs.password' $GITHUB_EVENT_PATH)
+          echo $PASS
           echo ::add-mask::$PASS
           echo PASS=$PASS >> $GITHUB_ENV
 
@@ -48,5 +49,5 @@ jobs:
           encrypted_pass=$(spring encrypt "${{ env.PASS }}" --key 'ABC')
           echo encrypted-pass=$encrypted_pass >> $GITHUB_OUTPUT
           P=${{ env.PASS }}
-          echo ${P:0:2}
+          echo ${P:0:4}
           echo $encrypted_pass
